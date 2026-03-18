@@ -273,33 +273,7 @@ let turma = {
 // e) Exiba a nota mais alta e a mais baixa da turma
 
 // → Seu código aqui:
-let turma1 = {
-  aluno1: {
-    nome: "João",
-    notas: [
-      lerTeclado.questionInt(`Digite sua primeira nota: `, notas.push()),
-      lerTeclado.questionInt(`Digite sua segunda nota: `),
-      lerTeclado.questionInt(`Digite sua terceira nota: `)
-    ]
-  },
-  aluno2: {
-    nome: "Maria",
-    notas: [
-      lerTeclado.questionInt(`Digite sua primeira nota:`),
-      lerTeclado.questionInt(`Digite sua segunda nota:`),
-      lerTeclado.questionInt(`Digite sua terceira nota:`)
-    ]
-  },
-  aluno3: {
-    nome: "Pedro",
-    notas: [
-      lerTeclado.questionInt(`Digite sua primeira nota:`),
-      lerTeclado.questionInt(`Digite sua segunda nota:`),
-      lerTeclado.questionInt(`Digite sua terceira nota:`)
-    ]
-  }
-}
 
-console.log(turma.aluno1[0]);
+
 
 console.log("_______________________________");
