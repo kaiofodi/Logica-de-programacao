@@ -165,6 +165,7 @@ const user3 = lerTeclado.question('Seu nome qual e: ')
 const idade3 = lerTeclado.question('Tens quantos anos: ')
 const endereco3 = lerTeclado.question('Qual seu endereco: ')
 */
+<<<<<<< HEAD
 /*
 const user = {
     nome: lerTeclado.question('Qual seu nome: '),
@@ -198,6 +199,24 @@ let listaDeUsuarios = [user, user2, user3]
 
 console.table(listaDeUsuarios)
 */
+=======
+const user1 = [
+    {nome1: "junior", idade1: 30, endereco1: 'Rua Walter Marquardt, Jaras city 666'}
+]
+
+const user2 = [
+    {nome2: "jairo", idade2: 45, cidade2: "Jaras city, Rua Carlos Eggert 114"}
+]
+
+const user3 = [
+    {nome3: "hitalo", idade3: 23, cidade: "Two Brothers city, Avenida Ayrton Senna, 453"}
+]
+
+let listaDeUsuarios = [user1, user2, user3]
+
+console.table(listaDeUsuarios)
+
+>>>>>>> 4e38601227383fa147d660de9e380a0e7dcea5c9
 console.log("_______________________________");
 
 
@@ -214,6 +233,7 @@ console.log("_______________________________");
 // g) Exiba o nome e a 3ª nota do 1º aluno.
 
 // → Seu código aqui:
+<<<<<<< HEAD
 /*
 const aluno = {
     nome: lerTeclado.question('Seu nome: '),
@@ -245,6 +265,12 @@ let turma = [aluno, aluno1, aluno2]
 console.table(turma)
 console.log(turma[2].notas.notas2);
 */
+=======
+
+
+
+
+>>>>>>> 4e38601227383fa147d660de9e380a0e7dcea5c9
 console.log("_______________________________");
 
 
@@ -264,6 +290,7 @@ console.log("_______________________________");
 //    "Produto: <nome> | Categoria: <categoria> | Estoque: <quantidade> un".
 
 // → Seu código aqui:
+<<<<<<< HEAD
 /*
 const produto = {
     nomeProduto: lerTeclado.question('Qual e o nome do seu produto: '),
@@ -276,6 +303,10 @@ const produto = {
 console.table(produto);
 console.log(`Produto ${produto.nomeProduto} | Categoria: ${produto.categoriaProduto} | Estoque: ${produto.EstoqueProduto} un`);
 */
+=======
+
+
+>>>>>>> 4e38601227383fa147d660de9e380a0e7dcea5c9
 console.log("_______________________________");
 
 
@@ -289,6 +320,7 @@ console.log("_______________________________");
 // b) Crie uma lista "estoqueFarmacia" e insira os objetos criados com push().
 // c) Exiba a lista com console.table().
 // d) Exiba somente o nome e preço do 2 medicamento.
+<<<<<<< HEAD
 // e) Exiba somente o nome e se está em estoque o 1 medicamento.
 
 const remedio = {
@@ -309,3 +341,6 @@ console.log(remedio1.nome)
 console.log(remedio1.preco)
 console.log(remedio.nome)
 console.log(remedio.emEstoque)
+=======
+// e) Exiba somente o nome e se está em estoque o 1 medicamento.
+>>>>>>> 4e38601227383fa147d660de9e380a0e7dcea5c9
