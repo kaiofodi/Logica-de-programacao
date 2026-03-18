@@ -188,16 +188,17 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-const notas = [
+/*
+let valores = [
     lerTeclado.questionFloat('Qual a sua primeira nota: '),
     lerTeclado.questionFloat('Qual a sua segunda nota: '),
     lerTeclado.questionFloat('Qual a sua terceira nota: ')
 ]
 
-const media = (notas[0] + notas[1] + notas[2] / notas.length())
+const media = ((valores[0] + valores[1] + valores[2]) / valores.length)
 
-console.log(`Nota 1: ${notas[0]} | Nota 2: ${notas[1]} | Nota 3: ${notas[2]}`)
-
+console.log(`Nota 1: ${valores[0]} | Nota 2: ${valores[1]} | Nota 3: ${valores[2]}`)
+*/
 console.log("_______________________________");
 
 
@@ -215,7 +216,13 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-
+/*
+let usuario = [
+  lerTeclado.questionFloat(`Quanto custou suas compras: `),
+  lerTeclado.questionFloat(`Entregue um valor a mais que o total de compras: `)
+]
+const troco = (usuario[0] - usuario[1]);
+*/
 console.log("_______________________________");
 
 
@@ -231,6 +238,12 @@ let idades = [15, 22, 30, 18, 25];
 
 // → Seu código aqui:
 
+/*
+console.log(precos[0] + precos[1] + precos[2] + precos[3]);
+console.log((notas[0] + notas[1] + notas[2] + notas[3]) / notas.length);
+console.log(`A maior idade e: `, Math.ceil(idades[2]));
+console.log(`A menor idade e: `, Math.floor(idades[0]));
+*/
 
 console.log("_______________________________");
 
@@ -260,6 +273,33 @@ let turma = {
 // e) Exiba a nota mais alta e a mais baixa da turma
 
 // → Seu código aqui:
+let turma1 = {
+  aluno1: {
+    nome: "João",
+    notas: [
+      lerTeclado.questionInt(`Digite sua primeira nota: `, notas.push()),
+      lerTeclado.questionInt(`Digite sua segunda nota: `),
+      lerTeclado.questionInt(`Digite sua terceira nota: `)
+    ]
+  },
+  aluno2: {
+    nome: "Maria",
+    notas: [
+      lerTeclado.questionInt(`Digite sua primeira nota:`),
+      lerTeclado.questionInt(`Digite sua segunda nota:`),
+      lerTeclado.questionInt(`Digite sua terceira nota:`)
+    ]
+  },
+  aluno3: {
+    nome: "Pedro",
+    notas: [
+      lerTeclado.questionInt(`Digite sua primeira nota:`),
+      lerTeclado.questionInt(`Digite sua segunda nota:`),
+      lerTeclado.questionInt(`Digite sua terceira nota:`)
+    ]
+  }
+}
 
+console.log(turma.aluno1[0]);
 
 console.log("_______________________________");
