@@ -34,7 +34,6 @@ if(pontos > 100){
 
 console.log("_______________________________");
 
-
 // ------------------------------------------------------------
 // EXERCÍCIO 2 – If / Else
 // ------------------------------------------------------------
@@ -45,6 +44,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+/*
 let hora = 14
 
 if(hora < 12){
@@ -54,8 +54,8 @@ if(hora < 12){
 } else {
     console.log('Boa noite!')
 }
+*/
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 3 – If / Else com input
@@ -67,7 +67,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-
+/*
 let usuario = lerTeclado.question(`Qual a sua idade:`)
 
 if(usuario >= 18){
@@ -77,10 +77,8 @@ if(usuario >= 18){
 } else {
     console.log('Jovem')
 }
-
-
+*/
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 4 – If / Else If / Else
@@ -95,6 +93,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+/*
 let notaAluno = 6.8
 
 let status;
@@ -108,12 +107,9 @@ if(notaAluno >= 9){
     status = 'reprovado'
 }
 console.log(status)
-
-
-
+*/
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 5 – If / Else If / Else com input
@@ -128,7 +124,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-
+/*
 let usuario1 = lerTeclado.questionFloat('Diga qual e a temperatura atual: ')
 
 if(usuario1 < 10) {
@@ -142,10 +138,9 @@ if(usuario1 < 10) {
 } else {
     console.log('Muito quente')
 }
-
+*/
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 6 – If aninhado
@@ -162,7 +157,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-
+/*
 let user = {
     nome: lerTeclado.question('Diga seu nome: '),
     ingresso: lerTeclado.keyInYN('Possui ingresso: '),
@@ -179,11 +174,8 @@ console.log('Dirija-se a bilheteria')
 } else {
     console.log('Entrada inteira')
 }
-
-
-
+*/
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 7 – If com operadores lógicos (&&)
@@ -198,8 +190,7 @@ console.log("_______________________________");
 //    - Senão          → exiba: "<nome>, você não atende aos requisitos."
 
 // → Seu código aqui:
-
-
+/*
 const motorista = {
     nome: lerTeclado.question('Digite seu nome: '),
     idade: lerTeclado.questionInt('Digite sua idade: '),
@@ -211,8 +202,7 @@ if(motorista.idade && motorista.cnh){
 } else {
     console.log('voce nao atende aos requisitos')
 }
-
-
+*/
 console.log("_______________________________");
 
 
@@ -226,7 +216,7 @@ console.log("_______________________________");
 //    Senão → exiba: "Sem desconto. Preço cheio."
 
 // → Seu código aqui:
-
+/*
 let estudante = lerTeclado.keyInYN('Voce ainda estuda: ')
 let idoso = lerTeclado.questionInt('Possui 60 anos ou mais: ')
 
@@ -235,6 +225,7 @@ if(estudante || idoso){
 } else {
     console.log('Sem desconto. Preco cheio')
 }
+*/
 console.log("_______________________________");
 
 
@@ -256,7 +247,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-
+/*
 const aluno = {
     nomeAluno: lerTeclado.question('Diga seu nome: '),
     notaP1: lerTeclado.questionInt('Diga a nota da sua P1: '),
@@ -276,7 +267,7 @@ if(media >= 7){
 
 console.table(aluno)
 console.log(`${aluno.nomeAluno}: ${media}`)
-
+*/
 console.log("_______________________________");
 
 
@@ -299,5 +290,49 @@ console.log("_______________________________");
 // g) Chame o professor para realizar alguns testes 🫡
 
 // → Seu código aqui:
+ 
+let numero = lerTeclado.questionFloat('Digite um numero: ')
+let numeros = lerTeclado.questionFloat('Digite outro numero: ')
+let operacao = lerTeclado.questionInt('Digite um numero para operacao 1 - Soma | 2 - Subtracao | 3 - Multiplicacao | 4 - Divisao: ')
+let simbolos = ''
+let resultado;
+
+let calculo = {
+    numero, 
+    numeros, 
+    operacao, 
+    simbolos
+}
+console.log(calculo);
+if(operacao === 1){
+    simbolos = "+"
+} else if(operacao === 2) {
+    simbolos = "-"
+} else if(operacao === 3) {
+    simbolos = "*"
+} else if(operacao === 4){
+    simbolos = "/"
+} else {
+    simbolo = "?" 
+}
+
+if(calculo.operacao === 1){
+    resultado = calculo.numero + calculo.numeros
+} else if(calculo.operacao === 2) {
+    resultado = calculo.numero - calculo.numeros
+} else if(calculo.operacao === 3) {
+    resultado = calculo.numero * calculo.numeros
+} else if(calculo.operacao === 4) {
+    resultado = calculo.numero / calculos.numeros
+    if(calculo.numeros === 0){
+        console.log('Erro divisao por 0 nao e permitida!')
+        resultado = 'Erro'
+    } else {
+        resultado = calculo.numero / calculo.numeros
+    }
+}
+
+if (resultado !== 'Erro')
+console.log(`${calculo.numero} ${calculo.simbolos} ${calculo.numeros} = ${resultado}`)
 
 console.log("_______________________________");
