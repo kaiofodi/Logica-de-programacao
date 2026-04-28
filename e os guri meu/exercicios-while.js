@@ -108,7 +108,7 @@ console.log("_______________________________");
 // b) Calcule e exiba a média.
 
 // → Seu código aqui:
-
+/*
 let notasUsuario = lerTeclado.questionFloat('Digite notas de 0 a 10: ')
 let soma = 0;
 let quant = 0;
@@ -127,7 +127,7 @@ if(quant > 0){
     let media = soma / quant
     console.log(`Media:`, media.toFixed(2));
 }
-
+*/
 
 
 console.log("_______________________________");
@@ -144,7 +144,32 @@ console.log("_______________________________");
 // c) O menu deve repetir até o usuário escolher 0.
 
 // → Seu código aqui:
+/*
+let data;
 
+do {
+    console.log(' 1 – Exibir hora atual');
+    console.log(' 2 – Exibir data atual');
+    console.log(' 0 - Sair');
+
+    data = lerTeclado.questionInt('Escolha uma opcao: ')
+
+    switch(data){
+        case 1:
+            console.log('Hora atual: ', new Date().toLocaleTimeString());
+            break;
+        case 2:
+            console.log('Data atual: ', new Date().toLocaleTimeString());
+            break;
+        case 0:
+            console.log('Saindo do programa');
+            break;
+        default:
+            console.log('Opcao Invalida');
+                   
+    }
+} while( data !== 0);
+*/
 
 console.log("_______________________________");
 
@@ -163,7 +188,26 @@ console.log("_______________________________");
 //    "<nome> acertou após <tentativas> tentativa(s)! O número era <secreto>."
 
 // → Seu código aqui:
+/*
+let numeroSecreto = Math.floor(Math.random() * 50) + 1;
+let jogador = lerTeclado.question('Qual seu nome: ')
+let palpite = 0;
+let tentativas = 0;
 
+while( palpite !== numeroSecreto){
+    palpite = lerTeclado.questionInt('Digite um numero de 1 a 50: ')
+    tentativas++;
+
+    if(palpite > numeroSecreto){
+        console.log('Muito alto! Tente menor.');
+    } else if( palpite < numeroSecreto){
+        console.log('Muito baixo! Tente maior.');
+        
+    }
+}
+
+console.log(`Parabens! o ${jogador} acertou apos ${tentativas} tentativas! O numero era ${numeroSecreto}`);
+*/
 
 console.log("_______________________________");
 
@@ -176,8 +220,15 @@ console.log("_______________________________");
 //    Formato para exibição: "<número> x <i> = <resultado>"
 
 // → Seu código aqui:
+/*
+let tabuada = lerTeclado.questionInt('Digite um numero inteiro (1 a 10): ')
+let i = 1;
 
-
+while(i <= 10){
+    console.log(`${tabuada} * ${i} = ${tabuada * i}`);
+    i++;
+}
+*/
 console.log("_______________________________");
 
 
@@ -193,7 +244,23 @@ console.log("_______________________________");
 // c) Ao final, exiba o saldo restante e o total de rodadas.
 
 // → Seu código aqui:
+/*
+let saldo = 1000;
+let rodada = 0;
 
+while(saldo > 0 && rodada < 10){
+    let saque = Math.floor(Math.random() * (200 - 50 * + 1)) + 50;
+
+    if(saque > saldo){
+        console.log('Saldo insuficiente.');
+    }
+
+    saldo -= saque
+
+    console.log(`Rodada ${rodada}: sacou R$ ${saque} | novo saldo: ${saldo}`);
+    rodada++
+}
+*/
 
 console.log("_______________________________");
 
@@ -211,6 +278,20 @@ console.log("_______________________________");
 // d) Exiba: "Total de contatos cadastrados: <qtd>"
 
 // → Seu código aqui:
+
+let contatos = [];
+let continuar;
+
+do{
+    let nome = lerTeclado.question('Digite seu nome: ')
+    let telefone = lerTeclado.question('Digite seu telefone: ')
+    contatos.push({nome, telefone})
+    continuar = lerTeclado.keyInYN('Deseja adicionar outro contato: ')
+} while(continuar){
+    console.log('Contatos cadastrados');
+    console.log(`${contatos.nome} e telefone ${contatos.telefone}`);
+    
+}
 
 
 console.log("_______________________________");
