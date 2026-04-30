@@ -136,8 +136,6 @@ console.log(produtos);
 console.log(catalogo);
 
 
-
-
 console.log("_______________________________");
 
 
