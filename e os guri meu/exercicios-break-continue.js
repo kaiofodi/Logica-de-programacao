@@ -13,7 +13,7 @@ let lerTeclado = require('readline-sync');
 //    "Primeiro múltiplo de 7 acima de 30: <número>" e encerre o laço com break.
 
 // → Seu código aqui:
-/*
+
 for(let i = 1; i <= 100; i++){
     console.log(`numeros de 1 a 100: ${i}`);
     if(i % 7 &&  i > 30){
@@ -21,7 +21,7 @@ for(let i = 1; i <= 100; i++){
         break;
     }
 }
-*/
+
 
 console.log("_______________________________");
 
@@ -36,7 +36,7 @@ console.log("_______________________________");
 // c) Ao final, exiba: "Consoantes exibidas: <quantidade>"
 
 // → Seu código aqui:
-/*
+
 const letras = ['a', 'b', 'c', 'e', 'f', 'i', 'k', 'o', 'p', 'u'];
 
 for(let i = 1; i < letras.length; i++){
@@ -46,7 +46,7 @@ for(let i = 1; i < letras.length; i++){
     }
     console.log(letra);
 }
-*/
+
 
 console.log("_______________________________");
 
@@ -65,23 +65,23 @@ console.log("_______________________________");
 // d) Teste com dois arrays:
 
 // → Seu código aqui:
-/*
+
 const notasAlunoA = [8, 7, 6.2, 9, 5, 7.5, 9, 8.9, 2.2, 10, 7.4];
 const notasAlunoB = [8, 4.5, 6.3, 9];
 
 for(let i = 0; i < notasAlunoA.length; i++){
     if(notasAlunoA[i] < 5){
-        return `Reprovado na nota ${notasAlunoA} ${i}`;
+        return `Reprovado na nota ${notasAlunoA[i]} ${i}`;
     }
 }
 for(let i = 0; i < notasAlunoB.length; i++){
     if(notasAlunoB[i] < 5){
-        return `Reprovado na nota ${notasAlunoB} ${i}`;
+        return `Reprovado na nota ${notasAlunoB[i]} ${i}`;
     }
     return 'Aprovado!'
 }
 console.log(verificarNotas(notasAlunoA, notasAlunoB));
-*/
+
 console.log("_______________________________");
 
 
@@ -98,21 +98,20 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 const palavraSecreta = 'Monster'
-let tentativa;
+let tentativa = 0
 let palpite;
 
-while(tentativa !== palavraSecreta){
-    tentativa = lerTeclado.question('Digite uma palavra: ')
+while(true){
+    palpite = lerTeclado.question('Digite uma palavra: ')
     tentativa++;
 
-    if(palpite > palavraSecreta){
+    if(palpite === palavraSecreta){
         console.log('Parabéns! Você acertou!');
-    } else if(palpite < palavraSecreta){
+        break;
+    } else {
         console.log('Errou! Tente novamente.');
     }
-    break;
 }
-
 
 console.log(`"Você precisou de ${tentativa} tentativa(s).`);
 
@@ -132,6 +131,20 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let numerosUsuario = lerTeclado.questionInt('Digite numeros (0 a 10): ')
+let soma = 0;
+let quantidade = 0;
+
+while(numerosUsuario !== 0){
+    if(numerosUsuario < 0 || numerosUsuario > 10){
+        console.log('Numero Invalido.');
+    } else {
+        soma += numerosUsuario;
+        quantidade++;
+    }   
+}
+console.log(`Soma dos positivos: ${soma}
+Quantidade de positivos: ${quantidade}`);
 
 console.log("_______________________________");
 
@@ -140,19 +153,29 @@ console.log("_______________________________");
 // EXERCÍCIO 6 – Return: busca em array de objetos
 // ------------------------------------------------------------
 // a) Dado o array de alunos:
-   const alunos = [
-     { nome: "Ana", nota: 8.5 },
-     { nome: "Bruno", nota: 6.0 },
-     { nome: "Carlos", nota: 9.2 },
-     { nome: "Diana", nota: 4.8 },
-     { nome: "Eva", nota: 7.1 },
-     { nome: "Fernando", nota: 3.8 }
-   ];
+   //const alunos = [
+   //  { nome: "Ana", nota: 8.5 },
+   //  { nome: "Bruno", nota: 6.0 },
+   //  { nome: "Carlos", nota: 9.2 },
+   //  { nome: "Diana", nota: 4.8 },
+   //  { nome: "Eva", nota: 7.1 },
+   //  { nome: "Fernando", nota: 3.8 }
+   //];
 // b) Crie um array que retorna o primeiro aluno com nota < 5.
 //    Se não houver, retorna null.
 
 // → Seu código aqui:
+const alunos = [
+      { nome: "Ana", nota: 8.5 },
+      { nome: "Bruno", nota: 6.0 },
+      { nome: "Carlos", nota: 9.2 },
+      { nome: "Diana", nota: 4.8 },
+      { nome: "Eva", nota: 7.1 },
+      { nome: "Fernando", nota: 3.8 }
+    ];
 
+const reprovado = alunos.find(alunos => alunos.nota < 5) || null;
+console.log(reprovado);
 
 console.log("_______________________________");
 
@@ -161,7 +184,7 @@ console.log("_______________________________");
 // EXERCÍCIO 7 – Continue: relatório de vendas
 // ------------------------------------------------------------
 // a) Dado o array:
-      const vendas = [320, -1, 150, -1, 80, 410, -1, 200];
+//    const vendas = [320, -1, 150, -1, 80, 410, -1, 200];
 //    (valores -1 representam vendas canceladas)
 // b) Usando for e continue, ignore as vendas canceladas (-1).
 // c) Acumule o total das vendas válidas e conte quantas há.
@@ -172,6 +195,33 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+const vendas = [320, -1, 150, -1, 80, 410, -1, 200];
+let totalVendas = 0;
+let quantVendas = 0;
+
+
+for(let i = 0; i < vendas.length; i++){
+    if(vendas === -1){
+        console.log(`Venda ${i} cancelada`);
+        continue;
+    }
+    if(totalVendas + vendas[i] > 1000){
+        console.log(`Limite de R$1000,00 atingido.`);
+        break;
+    }
+
+    if(quantVendas > 0){
+        let media = totalVendas / quantVendas
+        console.log(`Media: `, media.toFixed(2));
+    }
+    totalVendas += vendas[i];
+    quantVendas++;
+
+    console.log(`Vendas válidas: ${quantVendas}"
+    //    "Total arrecadado: R$ ${totalVendas} "
+    //    "Ticket médio: R$ ${media}`);
+    
+}
 
 console.log("_______________________________");
 
@@ -187,6 +237,21 @@ console.log("_______________________________");
 // e) Ao final: "Laço encerrado em i = <i> | Soma final: <soma>"
 
 // → Seu código aqui:
+let soma = 0;
 
+for(let i = 1; i <= 50; i++){
+    console.log(`Numeros de 1 a 50: ${i}`);
+    if(i % 5 === 0){
+    continue;
+}
+soma += i
+console.log(`Somado: ${i}
+Acumulado: ${soma}`);
+
+    if(soma > 200){
+    break;
+    }
+    console.log(`Laço encerrado em i = ${i} | Soma final: ${soma}`);
+}
 
 console.log("_______________________________");
