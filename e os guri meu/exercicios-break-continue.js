@@ -71,16 +71,20 @@ const notasAlunoB = [8, 4.5, 6.3, 9];
 
 for(let i = 0; i < notasAlunoA.length; i++){
     if(notasAlunoA[i] < 5){
-        return `Reprovado na nota ${notasAlunoA[i]} ${i}`;
+        console.log(`Reprovado na nota ${notasAlunoA[i]} ${i}`);
+        break;
     }
+    if(i == notasAlunoA.length) console.log('Aprovado!');
+    
 }
+
 for(let i = 0; i < notasAlunoB.length; i++){
-    if(notasAlunoB[i] < 5){
-        return `Reprovado na nota ${notasAlunoB[i]} ${i}`;
+    if(notasAlunoA[i] < 5){
+        console.log(`Reprovado na nota ${notasAlunoB[i]} ${i}`);
+        break;
     }
-    return 'Aprovado!'
+    if(i == notasAlunoB.length-1) console.log('Aprovado!');
 }
-console.log(verificarNotas(notasAlunoA, notasAlunoB));
 
 console.log("_______________________________");
 
