@@ -323,7 +323,7 @@ if(calculo.operacao === 1){
 } else if(calculo.operacao === 3) {
     resultado = calculo.numero * calculo.numeros
 } else if(calculo.operacao === 4) {
-    resultado = calculo.numero / calculos.numeros
+    resultado = calculo.numero / calculo.numeros
     if(calculo.numeros === 0){
         console.log('Erro divisao por 0 nao e permitida!')
         resultado = 'Erro'
