@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // ============================================================
 //   ATIVIDADE 03 – Input e Output em JavaScript
 // ============================================================
@@ -309,7 +309,6 @@ console.table(estoqueFarmacia);
 console.log(remedio1.nome)
 console.log(remedio1.preco)
 console.log(remedio.nome)
-=======
 // ============================================================
 //   ATIVIDADE 03 – Input e Output em JavaScript
 // ============================================================
@@ -620,5 +619,4 @@ console.table(estoqueFarmacia);
 console.log(remedio1.nome)
 console.log(remedio1.preco)
 console.log(remedio.nome)
->>>>>>> 4e38601227383fa147d660de9e380a0e7dcea5c9
 console.log(remedio.emEstoque)

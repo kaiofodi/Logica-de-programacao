@@ -184,16 +184,15 @@ console.log("_______________________________");
 //    - Se não:     "<nome> não foi encontrado(a)."
 
 // → Seu código aqui:
-
+/*
 const alunos = ["Ana", "Bruno", "Carla", "Diego", "Eva"];
 let alunoUsuario = guri.question('Digite um nome de algum aluno: ')
 const estaNaLista = true
 
-for(let i = 0; i< alunos.length; i++){
-    console.log(`Existe: ${alunoUsuario} está matriculado(a) ${i}. : Se nao: ${alunoUsuario} não foi encontrado(a).`);
-    break
+for(let i = 0; i < alunos.length; i++){
+    
 }
-
+*/
 console.log("_______________________________");
 
 
@@ -201,12 +200,12 @@ console.log("_______________________________");
 // EXERCÍCIO 8 – Vetor de objetos
 // ------------------------------------------------------------
 // a) Utilizando o vetor:
-      const livros = [
-        { titulo: "Dom Casmurro",       paginas: 256 },
-        { titulo: "O Cortiço",          paginas: 304 },
-        { titulo: "Memórias Póstumas",  paginas: 208 },
-        { titulo: "Capitães da Areia",  paginas: 280 },
-      ];
+//  const livros = [
+//        { titulo: "Dom Casmurro",       paginas: 256 },
+//        { titulo: "O Cortiço",          paginas: 304 },
+//        { titulo: "Memórias Póstumas",  paginas: 208 },
+//        { titulo: "Capitães da Areia",  paginas: 280 },
+//      ];
 // b) Exiba a lista com console.table().
 // c) Usando for, calcule:
 //    - Total de páginas de todos os livros.
@@ -214,6 +213,32 @@ console.log("_______________________________");
 // d) Exiba o título do livro com MAIS páginas.
 
 // → Seu código aqui:
+
+const livros = [
+    { titulo: "Dom Casmurro",       paginas: 256 },
+    { titulo: "O Cortiço",          paginas: 304 },
+    { titulo: "Memórias Póstumas",  paginas: 208 },
+    { titulo: "Capitães da Areia",  paginas: 280 },
+  ];
+
+
+console.table(livros)
+let somaPaginas = 0;
+let mediaPaginas = 0;
+let livroMaior = livros[0];
+
+for(let i = 0; i < livros.length; i++){
+    somaPaginas += livros[i].paginas
+    mediaPaginas = somaPaginas / livros.length
+if(livros[i].paginas > livroMaior.paginas){
+    livroMaior = livros[i]
+    }
+}
+
+console.log(`Numero total de paginas: ${somaPaginas}.
+Media de paginas: ${mediaPaginas}.`);
+console.log(`Livro com mais paginas: ${livroMaior.titulo} com: ${livroMaior.paginas}`);
+
 
 
 console.log("_______________________________");
@@ -223,7 +248,7 @@ console.log("_______________________________");
 // EXERCÍCIO 9 – Filtro com push
 // ------------------------------------------------------------
 // a) Utilizando o vetor:
-      const idades = [12, 17, 21, 15, 30, 45, 9, 67, 19, 8];
+//      const idades = [12, 17, 21, 15, 30, 45, 9, 67, 19, 8];
 // b) Usando for, separe o vetor acima em dois vetores:
 //    - menores[]: pessoas com idade < 18
 //    - adultos[]: pessoas com idade >= 18
@@ -232,8 +257,21 @@ console.log("_______________________________");
 //    "Adultos (<qtd>): <adultos>"
 
 // → Seu código aqui:
+/*const idades = [12, 17, 21, 15, 30, 45, 9, 67, 19, 8];
+let menoresIdade = [];
+let maioresIdade = [];
 
-
+for(let i = 0; i < idades.length; i++){
+    if(idades[i] < 18){
+        menoresIdade.push(i)
+    }
+    if(idades[i] > 18){
+        maioresIdade.push(i)
+    }
+}
+console.log(`Menores de idade: ${menoresIdade}.
+Maiores de idade: ${maioresIdade}.`);
+*/
 console.log("_______________________________");
 
 
@@ -252,6 +290,42 @@ console.log("_______________________________");
 // d) Ao sair: "Encerrando. Total de notas registradas: <qtd>"
 
 // → Seu código aqui:
+
+const notas = [];
+let numerosUsuario;
+do{
+    console.log(`===MENU===
+    1 - Adicionar nota
+    2 - Listar notas
+    3 - Estatísticas
+    4 - Remover última
+    5 - Limpar todas
+    0 - Sair`);
+
+numerosUsuario = guri.questionInt('Escolha uma opcao: ')
+ } while(numerosUsuario <= 5){
+    switch(notas){
+        case 1:
+            numerosUsuario = guri.questionInt(`adicione uma nota a lista: `);
+            break;
+        case 2:
+            numerosUsuario = guri.questionInt('Lista de notas: ', notas.length);
+            break;
+        case 3:
+            numerosUsuario = guri.questionInt(`Estatisticas: `);
+            break;
+        case 4:
+            numerosUsuario = guri.questionInt('Remova a ultima nota: ', notas.pop());
+            break;
+        case 5:
+            console.log('Limpando lista.');
+            break;
+        default:
+            console.log('saindo');
+    
+    }
+ }
+
 
 
 console.log("_______________________________");

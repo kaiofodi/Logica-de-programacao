@@ -25,10 +25,10 @@ const matrix = [
      [70, 80, 90],
     ];
 
-console.log(`Linhas: ${matrix.length}`);
-console.log(`Colunas: ${matrix[0].length}`);
-console.log(matrix[1][1]);
-console.log(matrix[2][2].length);
+console.log(`Linhas: ${matrix.length}.`);
+console.log(`Colunas: ${matrix[0].length}.`);
+console.log(`Valor central: ${matrix[1][1]}.`);
+console.log(`Valor do canto direito: ${matrix[matrix.length -1][matrix[0].length -1]}.);
 */
 console.log("_______________________________");
 
