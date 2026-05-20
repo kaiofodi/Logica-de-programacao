@@ -186,7 +186,7 @@ console.log("_______________________________");
 // e) Use template literal identificando cada produto pelo nome.
 
 // → Seu código aqui:
-
+/*
 const dadosUm = {
     nome1: lerTeclado.question('Diga um produto: '),
     preco1: lerTeclado.questionInt('Diga a preco desse produto: '),
@@ -247,7 +247,7 @@ console.log(`O produto é considerado caro: ${ProdutoCaro}
 console.log(`O produto tem preço abaixo de 50: ${ProdutoPrecoAbaixo}
     O produto tem preço abaixo de 50: ${ProdutoPrecoAbaixo2}
     O produto tem preço abaixo de 50: ${ProdutoPrecoAbaixo3}`);
-
+*/
 
 
 
