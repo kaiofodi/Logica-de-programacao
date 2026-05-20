@@ -16,47 +16,107 @@ let guri = require('readline-sync');
 // c) Não precisa verificar vencedor — apenas alternar X e O.
 
 // → Seu código aqui:
-
+/*
 const jogoDaVelha = [
     ["-",  "-",  "-"],
     ["-",  "-",  "-"],
     ["-",  "-",  "-"],
 ];
-let jogada1 = guri.question('Faca sua primeira jogada com linha e coluna: ');
-let jogada2 = guri.question('Faca sua segunda jogada com linha e coluna:');
-let jogada3 = guri.question('Faca sua terceira jogada com linha e coluna: ');
-let jogada4 = guri.question('Faca sua quarta jogada com linha e coluna:');
-let jogada5 = guri.question('Faca sua quinta jogada com linha e coluna: ');
-
-/*while(jogada1){
-    console.log('Posicao ja selecionada, escolha outra');
-    guri.question('Faca sua primeira jogada com linha e coluna: ');
-} if(jogada2) {
-    console.log('Posicao ja selecionada, escolha outra');
-    guri.question('Faca sua segunda jogada com linha e coluna:');
-} else if(jogada3) {
-    console.log('Posicao ja selecionada, escolha outra');
-    guri.question('Faca sua terceira jogada com linha e coluna: ');
-} else if(jogada4) {
-    console.log('Posicao ja selecionada, escolha outra');
-    guri.question('Faca sua quarta jogada com linha e coluna:');
-} else if(jogada5) {
-    console.log('Posicao ja selecionada, escolha outra');
-    guri.question('Faca sua quinta jogada com linha e coluna: ');
-} else {
-    console.log('Posicao invalida');
-
-}
-*/
-
-for(let i = 0; i < jogoDaVelha.length; i++){
-    for(let j = 0; j < jogoDaVelha[0].length; j++){
-        jogoDaVelha.push('x',[i][j]);
-    }
-}
+let jogador = 'x';
+let linha;
+let coluna;
 
 console.log('JOGO DA VELHA');
 console.table(jogoDaVelha);
+
+
+for(let i = 1; jogoDaVelha <= 5; i++){
+    } while(true){
+        linha = guri.questionInt(`Jogador ${jogador} - Digite a linha (0 a 2): `);
+        coluna = guri.questionInt(`Jogador ${jogador} - Digite a coluna (0 a 2): `);
+        if (jogoDaVelha[linha][coluna] === "-") {
+      break;
+    } else {
+      console.log("Posição já ocupada! Escolha outra.");
+    }
+  }
+jogoDaVelha[linha][coluna] = jogador
+    
+
+console.table(jogoDaVelha)
+
+jogador = jogador === 'x' ? 'o' : 'x'
+
+for(let i = 1; jogoDaVelha <= 5; i++){
+    } while(true){
+        linha = guri.questionInt(`Jogador ${jogador} - Digite a linha (0 a 2): `);
+        coluna = guri.questionInt(`Jogador ${jogador} - Digite a coluna (0 a 2): `);
+        if (jogoDaVelha[linha][coluna] === "-") {
+      break;
+    } else {
+      console.log("Posição já ocupada! Escolha outra.");
+    }
+  }
+jogoDaVelha[linha][coluna] = jogador
+    
+
+console.table(jogoDaVelha)
+
+jogador = jogador === 'x' ? 'o' : 'x'
+
+
+for(let i = 1; jogoDaVelha <= 5; i++){
+    } while(true){
+        linha = guri.questionInt(`Jogador ${jogador} - Digite a linha (0 a 2): `);
+        coluna = guri.questionInt(`Jogador ${jogador} - Digite a coluna (0 a 2): `);
+        if (jogoDaVelha[linha][coluna] === "-") {
+      break;
+    } else {
+      console.log("Posição já ocupada! Escolha outra.");
+    }
+  }
+jogoDaVelha[linha][coluna] = jogador
+    
+
+console.table(jogoDaVelha)
+
+jogador = jogador === 'x' ? 'o' : 'x'
+
+for(let i = 1; jogoDaVelha <= 5; i++){
+    } while(true){
+        linha = guri.questionInt(`Jogador ${jogador} - Digite a linha (0 a 2): `);
+        coluna = guri.questionInt(`Jogador ${jogador} - Digite a coluna (0 a 2): `);
+        if (jogoDaVelha[linha][coluna] === "-") {
+      break;
+    } else {
+      console.log("Posição já ocupada! Escolha outra.");
+    }
+  }
+jogoDaVelha[linha][coluna] = jogador
+    
+
+console.table(jogoDaVelha)
+
+jogador = jogador === 'x' ? 'o' : 'x'
+
+for(let i = 1; jogoDaVelha <= 5; i++){
+    } while(true){
+        linha = guri.questionInt(`Jogador ${jogador} - Digite a linha (0 a 2): `);
+        coluna = guri.questionInt(`Jogador ${jogador} - Digite a coluna (0 a 2): `);
+        if (jogoDaVelha[linha][coluna] === "-") {
+      break;
+    } else {
+      console.log("Posição já ocupada! Escolha outra.");
+    }
+  }
+jogoDaVelha[linha][coluna] = jogador
+
+jogador = jogador === 'x' ? 'o' : 'x'
+
+
+console.table(jogoDaVelha)
+*/
+
 
 console.log("_______________________________");
 
@@ -87,13 +147,13 @@ console.log("_______________________________");
 // DESAFIO 3 – Boletim escolar com console.table
 // ------------------------------------------------------------
 // a) Utilizando:
-const turma = [
-  { nome: "Ana",    notas: [8.0, 7.5, 9.0, 6.5] },
-  { nome: "Bruno",  notas: [4.0, 5.5, 6.0, 5.0] },
-  { nome: "Carla",  notas: [9.5, 9.0, 9.5, 10]  },
-  { nome: "Diego",  notas: [7.0, 6.5, 7.0, 8.5] },
-  { nome: "Eva",    notas: [3.5, 4.0, 5.0, 4.5] },
-];
+//const turma = [
+//{ nome: "Ana",    notas: [8.0, 7.5, 9.0, 6.5] },
+//{ nome: "Bruno",  notas: [4.0, 5.5, 6.0, 5.0] },
+//{ nome: "Carla",  notas: [9.5, 9.0, 9.5, 10]  },
+//{ nome: "Diego",  notas: [7.0, 6.5, 7.0, 8.5] },
+//{ nome: "Eva",    notas: [3.5, 4.0, 5.0, 4.5] },
+//   ];
 // b) Construa um vetor 'boletim' onde cada item seja:
 //    { nome, b1, b2, b3, b4, media, situacao }
 //    - situacao: "Aprovado" (>=7), "Recuperação" (>=5 e <7), "Reprovado" (<5)
@@ -105,7 +165,6 @@ const turma = [
 //    - Quantidade de aprovados, recuperação e reprovados.
 
 // → Seu código aqui:
-
 
 console.log("_______________________________");
 
