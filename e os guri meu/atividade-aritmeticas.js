@@ -275,6 +275,68 @@ let turma = {
   }
 }
 
-let notasUsuario = lerTeclado.questionFloat('Digite tres notas: ')
-notasUsuario.push(turma.aluno1.notas)
+for (let aluno in turma) {
+  console.log(`\nNotas de ${turma[aluno].nome}`);
+
+  for (let i = 1; i <= 3; i++) {
+      let nota = guri.questionFloat(`Digite a ${i}ª nota: `);
+      turma[aluno].notas.push(nota);
+  }
+}
+
+
+let somaTurma = 0;
+let quantidadeNotas = 0;
+
+let maiorTurma = turma.aluno1.notas[0];
+let menorTurma = turma.aluno1.notas[0];
+
+
+for (let aluno in turma) {
+
+  let soma = 0;
+  let maior = turma[aluno].notas[0];
+  let menor = turma[aluno].notas[0];
+
+  for (let nota of turma[aluno].notas) {
+      soma += nota;
+
+      if (nota > maior) {
+          maior = nota;
+      }
+
+      if (nota < menor) {
+          menor = nota;
+      }
+
+      if (nota > maiorTurma) {
+          maiorTurma = nota;
+      }
+
+      if (nota < menorTurma) {
+          menorTurma = nota;
+      }
+
+      somaTurma += nota;
+      quantidadeNotas++;
+  }
+
+  let media = soma / turma[aluno].notas.length;
+
+  console.log(`\nAluno: ${turma[aluno].nome}`);
+  console.log(`Média: ${media.toFixed(2)}`);
+
+ 
+  console.log(`Maior nota: ${maior}`);
+  console.log(`Menor nota: ${menor}`);
+}
+
+
+let mediaGeral = somaTurma / quantidadeNotas;
+
+console.log(`\nMédia geral da turma: ${mediaGeral.toFixed(2)}`);
+
+
+console.log(`Maior nota da turma: ${maiorTurma}`);
+console.log(`Menor nota da turma: ${menorTurma}`);
 console.log("_______________________________");
