@@ -214,6 +214,68 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let cadastro = [];
+
+
+let nomePessoa1 = guri.question('Digite o nome da primeira pessoa: ');
+let idadePessoa1 = guri.questionInt('Digite a idade da primeira pessoa: ');
+
+cadastro.push({
+    nome: nomePessoa1,
+    idade: idadePessoa1
+});
+
+
+let nomePessoa2 = guri.question('Digite o nome da segunda pessoa: ');
+let idadePessoa2 = guri.questionInt('Digite a idade da segunda pessoa: ');
+
+cadastro.push({
+    nome: nomePessoa2,
+    idade: idadePessoa2
+});
+
+
+let pessoa1MaisVelha = idadePessoa1 > idadePessoa2;
+let idadesIguais = idadePessoa1 === idadePessoa2;
+let pessoa1MaiorDeIdade = idadePessoa1 >= 18;
+let pessoa2MaiorDeIdade = idadePessoa2 >= 18;
+
+
+console.table(cadastro);
+
+console.log(
+    `Idade de ${nomePessoa1} é ${idadePessoa1} e ela é ${
+        pessoa1MaiorDeIdade ? 'maior de idade' : 'menor de idade'
+    }.`
+);
+
+console.log(
+    `Idade de ${nomePessoa2} é ${idadePessoa2} e ela é ${
+        pessoa2MaiorDeIdade ? 'maior de idade' : 'menor de idade'
+    }.`
+);
+
+console.log(
+    `${nomePessoa1} é mais velho(a) que ${nomePessoa2}? ${
+        pessoa1MaisVelha ? 'Sim' : 'Não'
+    }.`
+);
+
+console.log(
+    `As idades são iguais? ${
+        idadesIguais ? 'Sim' : 'Não'
+    }.`
+);
+
+
+console.log(
+    idadePessoa1 > idadePessoa2
+        ? `${nomePessoa1} é mais velho(a) que ${nomePessoa2}.`
+        : idadePessoa2 > idadePessoa1
+        ? `${nomePessoa2} é mais velho(a) que ${nomePessoa1}.`
+        : `${nomePessoa1} e ${nomePessoa2} têm a mesma idade.`
+);
+
  
 
 

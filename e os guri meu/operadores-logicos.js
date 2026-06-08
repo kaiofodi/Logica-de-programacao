@@ -338,17 +338,17 @@ let credenciaisSistema = {
     senha: '1234'
 };
 
-// Dados digitados pelo usuário
+
 let usuarioDigitado = guri.question('Digite o usuário: ');
 let senhaDigitada = guri.question('Digite a senha: ');
 
-// Verificações
+
 let usuarioCorreto = usuarioDigitado === credenciaisSistema.usuario;
 let senhaCorreta = senhaDigitada === credenciaisSistema.senha;
 let loginValido = usuarioCorreto && senhaCorreta;
 
-// Resultado
+
 console.log(
     loginValido
-
+)
 console.log("_______________________________");
