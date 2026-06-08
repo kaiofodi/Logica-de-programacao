@@ -52,6 +52,18 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+console.log(5 != 5);
+console.log(5 !== 5);
+console.log(5 != '5');
+console.log(5 !== '5');
+console.log(7 != 3);
+console.log(7 !== 3);
+console.log(true != 1);
+console.log(true !== 1);
+
+
+
+
 
 console.log("_______________________________");
 
@@ -71,6 +83,21 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let salarioA = 3500;
+let salarioB = 4200;
+
+let maior = salarioA > salarioB;
+let menor = salarioA < salarioB;
+let maiorIgual = salarioA >= salarioB;
+let menorIgual = salarioA <= salarioB;
+let igual = salarioA === salarioB;
+
+console.log(`Salário A (R$ ${salarioA}) > Salário B (R$ ${salarioB}): ${maior ? 'true' : 'false'}`);
+console.log(`Salário A (R$ ${salarioA}) < Salário B (R$ ${salarioB}): ${menor ? 'true' : 'false'}`);
+console.log(`Salário A (R$ ${salarioA}) >= Salário B (R$ ${salarioB}): ${maiorIgual ? 'true' : 'false'}`);
+console.log(`Salário A (R$ ${salarioA}) <= Salário B (R$ ${salarioB}): ${menorIgual ? 'true' : 'false'}`);
+console.log(`Salário A (R$ ${salarioA}) === Salário B (R$ ${salarioB}): ${igual ? 'true' : 'false'}`);
+
 
 console.log("_______________________________");
 
@@ -87,6 +114,20 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let estoque = 0;
+
+let temEstoque = estoque > 0;
+let estoqueZerado = estoque === 0;
+
+let temperatura = 36.5;
+
+let febre = temperatura >= 37.6;
+
+console.log(`Estoque: ${estoque}`);
+console.log(`Tem estoque: ${temEstoque}`);
+console.log(`Estoque zerado: ${estoqueZerado}`);
+console.log(`Temperatura: ${temperatura}°C`);
+console.log(`Febre: ${febre}`);
 
 console.log("_______________________________");
 
@@ -103,6 +144,21 @@ console.log("_______________________________");
 // c) Exiba cada resultado com template literal.
 
 // → Seu código aqui:
+
+const guri = require('guri');
+
+let num1 = guri.questionFloat('Digite o primeiro número: ');
+let num2 = guri.questionFloat('Digite o segundo número: ');
+
+let maior = num1 > num2;
+let menor = num1 < num2;
+let igual = num1 === num2;
+let maiorOuIgual = num1 >= num2;
+
+console.log(`${num1} > ${num2}: ${maior}`);
+console.log(`${num1} < ${num2}: ${menor}`);
+console.log(`${num1} === ${num2}: ${igual}`);
+console.log(`${num1} >= ${num2}: ${maiorOuIgual}`);
 
 
 console.log("_______________________________");
@@ -122,7 +178,18 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+const guri = require('guri');
 
+let preco = guri.questionFloat('Digite o preço do produto: ');
+
+const precoMaximo = 100;
+
+let estaDentroDoOrcamento = preco <= precoMaximo;
+let esteItemEhCaro = preco > precoMaximo;
+
+console.log(`Preço informado: R$ ${preco}`);
+console.log(`Dentro do orçamento (≤ R$ ${precoMaximo})? : ${estaDentroDoOrcamento ? 'Sim' : 'Não'}`);
+console.log(`Item caro (> R$ ${precoMaximo})? : ${esteItemEhCaro ? 'Sim' : 'Não'}`);
 console.log("_______________________________");
 
 
@@ -141,6 +208,52 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let cadastro = [];
+
+let nome1 = guri.question('Digite o nome da primeira pessoa: ');
+let idade1 = guri.questionInt('Digite a idade da primeira pessoa: ');
+
+cadastro.push({
+    nome: nome1,
+    idade: idade1
+});
+
+
+let nome2 = guri.question('Digite o nome da segunda pessoa: ');
+let idade2 = guri.questionInt('Digite a idade da segunda pessoa: ');
+
+cadastro.push({
+    nome: nome2,
+    idade: idade2
+});
+
+
+let pessoa1MaisVelha = idade1 > idade2;
+let idadesIguais = idade1 === idade2;
+let pessoa1MaiorIdade = idade1 >= 18;
+let pessoa2MaiorIdade = idade2 >= 18;
+
+
+console.log(`Idade de ${nome1}: ${idade1} anos.`);
+console.log(`${nome1} é ${pessoa1MaiorIdade ? 'maior de idade' : 'menor de idade'}.`);
+
+console.log(`Idade de ${nome2}: ${idade2} anos.`);
+console.log(`${nome2} é ${pessoa2MaiorIdade ? 'maior de idade' : 'menor de idade'}.`);
+
+console.log(`\n${nome1} é mais velho(a) que ${nome2}? ${pessoa1MaisVelha ? 'Sim' : 'Não'}`);
+console.log(`As idades são iguais? ${idadesIguais ? 'Sim' : 'Não'}`);
+
+
+console.log(
+    idade1 > idade2
+        ? `${nome1} é mais velho(a) que ${nome2}.`
+        : idade2 > idade1
+            ? `${nome2} é mais velho(a) que ${nome1}.`
+            : `${nome1} e ${nome2} têm a mesma idade.`
+);
+
+
+console.table(cadastro);
 
 console.log("_______________________________");
 
@@ -155,5 +268,82 @@ console.log("_______________________________");
 //    Exemplo: `Aluno com primeira maior nota: ${nota1aluno1 > nota1aluno2 ? nomeAluno1 : nomeAluno2}`
 // → Seu código aqui:
 
+
+let alunos = [];
+
+
+let nomeAluno1 = guri.question('Nome do primeiro aluno: ');
+let nota1Aluno1 = guri.questionFloat('Primeira nota: ');
+let nota2Aluno1 = guri.questionFloat('Segunda nota: ');
+let nota3Aluno1 = guri.questionFloat('Terceira nota: ');
+
+alunos.push({
+    nome: nomeAluno1,
+    nota1: nota1Aluno1,
+    nota2: nota2Aluno1,
+    nota3: nota3Aluno1
+});
+
+
+let nomeAluno2 = guri.question('Nome do segundo aluno: ');
+let nota1Aluno2 = guri.questionFloat('Primeira nota: ');
+let nota2Aluno2 = guri.questionFloat('Segunda nota: ');
+let nota3Aluno2 = guri.questionFloat('Terceira nota: ');
+
+alunos.push({
+    nome: nomeAluno2,
+    nota1: nota1Aluno2,
+    nota2: nota2Aluno2,
+    nota3: nota3Aluno2
+});
+
+
+let mediaAluno1 = (nota1Aluno1 + nota2Aluno1 + nota3Aluno1) / 3;
+let mediaAluno2 = (nota1Aluno2 + nota2Aluno2 + nota3Aluno2) / 3;
+
+
+console.table(alunos);
+
+
+console.log(`${nomeAluno1} teve média ${mediaAluno1.toFixed(2)}`);
+console.log(`${nomeAluno2} teve média ${mediaAluno2.toFixed(2)}`);
+
+
+console.log(
+    `Aluno com maior média: ${
+        mediaAluno1 > mediaAluno2
+            ? nomeAluno1
+            : mediaAluno2 > mediaAluno1
+            ? nomeAluno2
+            : 'Empate'
+    }`
+);
+
+
+console.log(
+    `Aluno com primeira maior nota: ${
+        nota1Aluno1 > nota1Aluno2 ? nomeAluno1 :
+        nota1Aluno2 > nota1Aluno1 ? nomeAluno2 :
+        'Empate'
+    }`
+);
+
+
+console.log(
+    `Aluno com segunda maior nota: ${
+        nota2Aluno1 > nota2Aluno2 ? nomeAluno1 :
+        nota2Aluno2 > nota2Aluno1 ? nomeAluno2 :
+        'Empate'
+    }`
+);
+
+
+console.log(
+    `Aluno com terceira maior nota: ${
+        nota3Aluno1 > nota3Aluno2 ? nomeAluno1 :
+        nota3Aluno2 > nota3Aluno1 ? nomeAluno2 :
+        'Empate'
+    }`
+);
 
 console.log("_______________________________");

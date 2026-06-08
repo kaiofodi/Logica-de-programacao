@@ -252,6 +252,14 @@ console.log("_______________________________");
 // EXERCÍCIO 10 – Trabalhando com objetos
 // ------------------------------------------------------------
 // Dado o objeto turma:
+// a) Sem alterar o objeto (utilize somente push), peça para o usuário 3 notas para cada aluno, indicando a quem pertencerá cada nota
+// b) Calcule a média de notas de cada aluno e exiba no console, indicando a quem pertence cada média
+// c) Exiba a média geral da turma
+// d) Exiba a nota mais alta e a mais baixa de cada aluno
+// e) Exiba a nota mais alta e a mais baixa da turma
+
+// → Seu código aqui:
+
 let turma = {
   aluno1: {
     nome: "João",
@@ -266,14 +274,7 @@ let turma = {
     notas: []
   }
 }
-// a) Sem alterar o objeto (utilize somente push), peça para o usuário 3 notas para cada aluno, indicando a quem pertencerá cada nota
-// b) Calcule a média de notas de cada aluno e exiba no console, indicando a quem pertence cada média
-// c) Exiba a média geral da turma
-// d) Exiba a nota mais alta e a mais baixa de cada aluno
-// e) Exiba a nota mais alta e a mais baixa da turma
 
-// → Seu código aqui:
-
-
-
+let notasUsuario = lerTeclado.questionFloat('Digite tres notas: ')
+notasUsuario.push(turma.aluno1.notas)
 console.log("_______________________________");

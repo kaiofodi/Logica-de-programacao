@@ -173,6 +173,49 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+function somarVetor(vet) {
+    let soma = 0;
+
+    soma = 0;
+
+for(let i = 0; i < vet.length; i++){
+    soma += vet[i]
+
+    }
+    return soma;
+}    
+
+function mediaVetor(vet) {
+    return somarVetor(vet) / vet.length;
+}
+
+function maiorDoVetor(vet) {
+    let maior = vet[0];
+
+    for(let i = 1; i < vet.length; i++) {
+        if(vet[i] > maior) {
+            maior = vet[i]
+        }
+    }
+    return maior;
+}
+
+function menorDoVetor(vet) {
+    let menor = vet[0];
+
+    for(let i = 1; i < vet.length; i++) {
+        if(vet[i] < menor) {
+            menor = vet[i]
+        }
+    }
+    return menor
+}
+console.log('Soma:', somarVetor(numeros));
+console.log('Media:', mediaVetor(numeros));
+console.log('Maior:', maiorDoVetor(numeros));
+console.log('Menor:', menorDoVetor(numeros));
+
+
 
 console.log("_______________________________");
 
@@ -188,6 +231,14 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+function criarAluno(nome, idade, nota) {
+    nome = 'Liara'
+    idade = 18
+    nota = 7.0
+    situacao = nota >= 7
+}
+
+criarAluno(nome, idade, nota)
 
 console.log("_______________________________");
 
