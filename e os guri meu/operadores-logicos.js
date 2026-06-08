@@ -288,6 +288,28 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let usuario = {
+    ehAdmin: guri.keyInYN('Você é administrador?'),
+    logado: guri.keyInYN('Você está logado?'),
+    contaAtiva: guri.keyInYN('Sua conta está ativa?')
+};
+
+// Verificações
+let acessoSistema = usuario.logado && usuario.contaAtiva;
+let acessoAdmin = acessoSistema && usuario.ehAdmin;
+let acessoNegado = !usuario.logado || !usuario.contaAtiva;
+
+// Exibição
+console.log('\n=== DADOS DO USUÁRIO ===');
+console.log(`Administrador: ${usuario.ehAdmin ? 'Sim' : 'Não'}`);
+console.log(`Logado: ${usuario.logado ? 'Sim' : 'Não'}`);
+console.log(`Conta ativa: ${usuario.contaAtiva ? 'Sim' : 'Não'}`);
+
+console.log('\n=== VERIFICAÇÕES ===');
+console.log(`Acesso ao sistema: ${acessoSistema ? 'Permitido' : 'Negado'}`);
+console.log(`Acesso de administrador: ${acessoAdmin ? 'Permitido' : 'Negado'}`);
+console.log(`Acesso negado: ${acessoNegado ? 'Sim' : 'Não'}`);
+
 
 console.log("_______________________________");
 
@@ -311,5 +333,22 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let credenciaisSistema = {
+    usuario: 'admin',
+    senha: '1234'
+};
+
+// Dados digitados pelo usuário
+let usuarioDigitado = guri.question('Digite o usuário: ');
+let senhaDigitada = guri.question('Digite a senha: ');
+
+// Verificações
+let usuarioCorreto = usuarioDigitado === credenciaisSistema.usuario;
+let senhaCorreta = senhaDigitada === credenciaisSistema.senha;
+let loginValido = usuarioCorreto && senhaCorreta;
+
+// Resultado
+console.log(
+    loginValido
 
 console.log("_______________________________");
