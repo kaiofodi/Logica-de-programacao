@@ -2,16 +2,12 @@
 //                    BANCO MONETARIO - AVALIATIVO
 //=================================================================
 // Desenvolver um sistema de banco monetario
+// Desenvolvido por Kaio
 
 let guri = require('readline-sync');
 
 let usuarioBanco = []
-let taxaBanco = {
-    ted: 10.0,
-    doc: 15.0,
-    investimento: 0.02,
 
-}
 
 
 function usuario() {
@@ -76,20 +72,19 @@ function MenuPrincipal(){
       1 - Realizar Deposito
       2 - Realizar Saque
       3 - Tirar duvidas com o nu!bot
-      4 - Realizar Transferencia
-      5 - Exibir Extrato Completo
+      4 - Exibir Extrato Completo
       0 - Sair`)
     
     return escolhaValor(0, 5)
 }
 
-function Validar(min, max, ValorEscolhido){
-    if (ValorEscolhido < min || ValorEscolhido > max) return true
+function Validar(min, max, valor){
+    if (valor < min || valor > max) return true
     return false
 }
 
-function escolhaValor(min, max, valorEscolhido){
-    let valor = guri.questionInt('Digite a opcao desejada: ')
+function escolhaValor(min, max, valor){
+    valor = guri.questionInt('Digite a opcao desejada: ')
     while (Validar(min, max, valor)) {
         console.log('Valor invalido, tente novamente!')
         valor = guri.questionInt('Digite a opcao desejada: ')
@@ -119,6 +114,32 @@ function inicializar(){
         }
     } while (escolha != 0)
 }
+
+function inicializarConta(loginusuario) {
+    let escolha;
+    do {
+        escolha = MenuPrincipal();
+
+        switch (escolha) {
+            case 1:
+                Deposito(loginusuario);
+                break;
+            case 2:
+                Saque(loginusuario);
+                break;
+            case 3:
+                Ajudachat(loginusuario);
+                break;
+            case 4:
+                Extrato(loginusuario);
+                break;
+            case 0:
+                console.log('Saindo do sistema...')
+                break;
+        }
+    } while (escolha != 0)
+}
+
 function Acesso() {
     let cpfoucnpj = guri.question('Digite seu cpf ou cnpj para acessar sua conta: ')
     let usuarioEncontrado = usuarioBanco.find(usuario => usuario.cpf === cpfoucnpj || usuario.cnpj === cpfoucnpj);
@@ -140,6 +161,7 @@ function Deposito(loginusuario) {
     console.log(`Deposito de R$${valorDeposito.toFixed(2)} realizado com sucesso! Novo saldo: R$${loginusuario.saldo.toFixed(2)}`)
     loginusuario.extrato.push({ tipo: 'Deposito', valor: valorDeposito, data: new Date() })
 }
+
 function Saque(loginusuario) {
     let valorSaque = guri.questionFloat('Digite o valor do saque: ')
     while (valorSaque <= 0) {
@@ -151,37 +173,9 @@ function Saque(loginusuario) {
     loginusuario.extrato.push({ tipo: 'Saque', valor: valorSaque, data: new Date() })
 }
 
-function Transferencia(loginusuario) {
-    let valorTransferencia = guri.questionFloat('Digite o valor da transferencia: ')
-    while (valorTransferencia <= 0) {
-        console.log('Valor invalido, tente novamente!')
-        valorTransferencia = guri.questionFloat('Digite o valor da transferencia: ')
-    }
-    ted = valorTransferencia * (taxaBanco.ted / 100)
-    let totalTransferencia = valorTransferencia + ted
-    let doc = valorTransferencia * (taxaBanco.doc / 100)
-    let totalTransferenciaDoc = valorTransferencia + doc
-    let cpfOuCnpj = guri.question('Digite o cpf ou cnpj do destinatario: ')
-    let usuarioDestinatario = usuarioBanco.find(usuario => usuario.cpf === cpfOuCnpj || usuario.cnpj === cpfOuCnpj);
-}
 
-function Emprestimo() {
-    let valorEmprestimo = guri.questionFloat('Digite o valor do emprestimo: ')
-    while (valorEmprestimo <= 0) {
-        console.log('Valor invalido, tente novamente!')
-        valorEmprestimo = guri.questionFloat('Digite o valor do emprestimo: ')
-    }
-}
 
-function Investimento() {
-    let valorInvestimento = guri.questionFloat('Digite o valor do investimento: ')
-    while (valorInvestimento <= 0) {
-        console.log('Valor invalido, tente novamente!')
-        valorInvestimento = guri.questionFloat('Digite o valor do investimento: ')
-    }
-    investimento = valorInvestimento * (taxaBanco.investimento / 100)
-    let totalInvestimento = valorInvestimento + investimento
-}
+
 
 function Extrato(loginusuario) {
     console.log('Extrato Completo')
@@ -195,50 +189,10 @@ function Ajudachat() {
    
 }
 
-function Cashback() {
-    let valorCashback = guri.questionFloat('Digite o valor do cashback: ')
-    while (valorCashback <= 0) {
-        console.log('Valor invalido, tente novamente!')
-        valorCashback = guri.questionFloat('Digite o valor do cashback: ')
-    }
-    loginusuario.saldo += valorCashback;
 
-}
 
-function RecargaCelular() {
-    let valorRecarga = guri.questionFloat('Digite o valor da recarga: ')
-    while (valorRecarga <= 0) {
-        console.log('Valor invalido, tente novamente!')
-        valorRecarga = guri.questionFloat('Digite o valor da recarga: ')
-    }
-}
 
-function inicializarConta(loginusuario) {
-    let escolha;
-    do {
-        escolha = MenuPrincipal();
 
-        switch (escolha) {
-            case 1:
-                Deposito(loginusuario);
-                break;
-            case 2:
-                Saque(loginusuario);
-                break;
-            case 3:
-                Ajudachat(loginusuario);
-                break;
-            case 4:
-                Transferencia(loginusuario);
-                break;
-            case 5:
-                Extrato(loginusuario);
-                break;
-            case 0:
-                console.log('Saindo do sistema...')
-                break;
-        }
-    } while (escolha != 0)
-}
 
-//let objeto(conta, limites, tipo, infos pessoais,).
+
+
