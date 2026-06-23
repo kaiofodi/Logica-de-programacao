@@ -60,8 +60,8 @@ function DadosExibidos(cpfoucnpj){
         BEM-VINDO AO NU!ZE
         ===========================
         Selecione uma das opções:
-        1 - Acessar minha conta
-        2 - Criar nova conta
+        1 - Criar nova conta
+        2 - Acessar minha conta
         0 - Sair`)
         
         return escolhaValor(0, 2)
@@ -106,11 +106,12 @@ function inicializar(){
         
         switch (escolha) {
             case 1:
+                cadastro()
                 console.log('Acessar minha conta')
-                Acesso()
                 break;
             case 2:
-                cadastro()
+                console.log('Acessar minha conta')
+                Acesso()
                 break;
             case 0:
                 console.log('Saindo do sistema...')
