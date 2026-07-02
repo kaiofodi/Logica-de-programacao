@@ -7,6 +7,7 @@
 
 let guri = require('readline-sync');
 
+let tarefas = []
 
 function menuPrincipal(){
     console.log(`
@@ -76,12 +77,16 @@ function inicio(){
         }
     } while (escolha != 0)
 }
+
+function adicionar(tarefas) {
+    let adicionarItem = guri.question('Digite o item que deseja adicionar: ')
+    let itemEncontrado = itemEncontrado
+}
 /*
-function adicionar()
 function visualizarLista()
 function visualizarItem()
 function editar()
 function excluir()
 function filtrar()
-function encerrar()
+
 */
